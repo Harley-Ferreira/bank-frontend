@@ -46,8 +46,20 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
 
-    <mat-card-actions style="margin-left: 1.4px;">
-      <button mat-raised-button color="primary" aria-label="Nova transferência" (click)="onAdd()">
+    <mat-paginator
+      [length]="totalElements"
+      [pageSize]="size"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="goNextToPage($event)">
+    </mat-paginator>
+
+    <mat-card-actions style="margin-left: 1.4px">
+      <button
+        mat-raised-button
+        color="primary"
+        aria-label="Nova transferência"
+        (click)="onAdd()"
+      >
         Nova transferência
       </button>
     </mat-card-actions>

@@ -7,6 +7,7 @@ import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-transfers',
@@ -16,6 +17,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TransfersComponent implements OnInit {
   //transfers$: Observable<Transfer[]>;
   transfersList: Transfer[] = []
+  totalElements = 0;
+  page = 0;
+  size = 1;
+  pageSizeOptions: number[] = [1]
 
   displayedColumns = [
     '_id',
@@ -53,13 +58,20 @@ export class TransfersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getTransfers()
+    this.getTransfers(this.page, this.size)
   }
 
 
-  getTransfers() {
-    this.transfersService.getTransferList().subscribe(response => {
+  getTransfers(page: number, size: number) {
+    this.transfersService.getTransferList(page, size).subscribe(response => {
       this.transfersList = response.content
+      this.totalElements = response.totalElements
+      this.page = response.number
     })
+  }
+
+  goNextToPage(event: PageEvent) {
+    this.page = event.pageIndex
+    this.getTransfers(this.page, this.size)
   }
 }

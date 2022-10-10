@@ -3,19 +3,19 @@
   <mat-card-content>
     <form [formGroup]="form">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Conta de Origem" formControlName="originAccount"  />
+        <input matInput placeholder="Conta de Origem" formControlName="originAccount" required="true" />
       </mat-form-field>
 
       <mat-form-field  class="full-width">
-        <input matInput placeholder="Conta de Destino" formControlName="destinationAccount" />
+        <input matInput placeholder="Conta de Destino" formControlName="destinationAccount" required="true"/>
       </mat-form-field>
 
       <mat-form-field  class="full-width">
-        <input type="number"  matInput placeholder="Valor" formControlName="transferValue" />
+        <input type="number"  matInput placeholder="Valor" formControlName="transferValue" required="true"/>
       </mat-form-field>
 
       <mat-form-field  class="full-width">
-        <input type="date"  matInput placeholder="Data da Transferência" formControlName="transferDate" />
+        <input type="date"  matInput placeholder="Data da Transferência" formControlName="transferDate" required="true"/>
       </mat-form-field>
     </form>
 
