@@ -19,14 +19,15 @@ export class TransfersComponent implements OnInit {
   transfersList: Transfer[] = []
   totalElements = 0;
   page = 0;
-  size = 1;
-  pageSizeOptions: number[] = [1]
+  size = 10;
+  pageSizeOptions: number[] = [10]
 
   displayedColumns = [
     '_id',
     'originAccount',
     'destinationAccount',
     'transferValue',
+    'transferTaxa',
     'transferDate',
     'schedulingDate',
   ];

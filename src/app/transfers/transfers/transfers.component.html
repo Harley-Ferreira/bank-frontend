@@ -30,6 +30,11 @@
         <td mat-cell *matCellDef="let element">{{ element.transferValue }}</td>
       </ng-container>
 
+      <ng-container matColumnDef="transferTaxa">
+        <th mat-header-cell *matHeaderCellDef>Taxa Cobrada</th>
+        <td mat-cell *matCellDef="let element">{{ element.transferTaxa }}</td>
+      </ng-container>
+
       <!-- Data Agend. Column -->
       <ng-container matColumnDef="schedulingDate">
         <th mat-header-cell *matHeaderCellDef>Data do Agendamento</th>

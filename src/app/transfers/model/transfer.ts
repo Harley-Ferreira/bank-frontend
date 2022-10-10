@@ -3,6 +3,7 @@ export interface Transfer {
   originAccount: number;
   destinationAccount: number;
   transferValue: number;
+  transferTaxa: number;
   transferDate: string;
   schedulingDate: string;
 }
