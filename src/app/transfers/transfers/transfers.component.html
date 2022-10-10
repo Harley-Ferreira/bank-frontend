@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <span>Agendamento de Transferências</span>
+  </mat-toolbar>
+  <div>
+    <table mat-table [dataSource]="transfersList" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element._id }}</td>
+      </ng-container>
+
+      <!-- Conta Origem Column -->
+      <ng-container matColumnDef="originAccount">
+        <th mat-header-cell *matHeaderCellDef>Conta de Origem</th>
+        <td mat-cell *matCellDef="let element">{{ element.originAccount }}</td>
+      </ng-container>
+
+      <!--  Conta Destino Column -->
+      <ng-container matColumnDef="destinationAccount">
+        <th mat-header-cell *matHeaderCellDef>Conta de Destino</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.destinationAccount }}
+        </td>
+      </ng-container>
+
+      <!-- Valor Column -->
+      <ng-container matColumnDef="transferValue">
+        <th mat-header-cell *matHeaderCellDef>Valor</th>
+        <td mat-cell *matCellDef="let element">{{ element.transferValue }}</td>
+      </ng-container>
+
+      <!-- Data Agend. Column -->
+      <ng-container matColumnDef="schedulingDate">
+        <th mat-header-cell *matHeaderCellDef>Data do Agendamento</th>
+        <td mat-cell *matCellDef="let element">{{ element.schedulingDate }}</td>
+      </ng-container>
+
+      <!-- Data Transfe. Column -->
+      <ng-container matColumnDef="transferDate">
+        <th mat-header-cell *matHeaderCellDef>Data da Transferência</th>
+        <td mat-cell *matCellDef="let element">{{ element.transferDate }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-card-actions style="margin-left: 1.4px;">
+      <button mat-raised-button color="primary" aria-label="Nova transferência" (click)="onAdd()">
+        Nova transferência
+      </button>
+    </mat-card-actions>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-spiner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>

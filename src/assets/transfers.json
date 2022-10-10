@@ -1,0 +1,45 @@
+{
+  "content": [
+    {
+      "originAccount": 123456,
+      "destinationAccount": 654321,
+      "transferValue": 100.0,
+      "transferDate": "2022-10-09",
+      "schedulingDate": "2022-10-10",
+      "_id": 1
+    },
+    {
+      "originAccount": 123456,
+      "destinationAccount": 654321,
+      "transferValue": 100.0,
+      "transferDate": "2022-10-09",
+      "schedulingDate": "2022-10-09",
+      "_id": 2
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "pageSize": 20,
+    "pageNumber": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 2,
+  "size": 20,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "first": true,
+  "numberOfElements": 2,
+  "empty": false
+}
